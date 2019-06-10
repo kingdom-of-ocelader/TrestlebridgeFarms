@@ -47,7 +47,6 @@ namespace Trestlebridge.Actions {
                     Console.WriteLine("Congrats you added a duck house.");
                     Thread.Sleep(3000);
                     farm.AddDuckHouse(new DuckHouse());
-
                     break;
                 default:
                     break;

@@ -28,6 +28,11 @@ namespace Trestlebridge.Actions
 
 
                     break;
+                case 2:
+                    Console.WriteLine("Congrats you've added a plowed field");
+                    Thread.Sleep(3000);
+                    farm.AddPlowedField(new PlowedField());
+                    break;
                 default:
                     break;
             }

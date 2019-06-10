@@ -36,12 +36,14 @@ namespace Trestlebridge.Models
             GrazingFields.Add(field);
             
         }
+
         public void AddPlowedField (PlowedField field){
             PlowedFields.Add(field);
-        }  
+        }
         public void AddDuckHouse (DuckHouse field)
         {
             DuckHouses.Add(field);
+
         }
 
         public override string ToString()

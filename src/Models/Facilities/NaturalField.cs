@@ -3,28 +3,28 @@ using System.Text;
 using System.Collections.Generic;
 using Trestlebridge.Interfaces;
 
-
-namespace Trestlebridge.Models.Facilities {
-    public class GrazingField : IFacility<IGrazing>
+namespace Trestlebridge.Models.Facilities
+{
+    public class NaturalField : IFacility<INatural>
     {
-        private int _capacity = 20;
+        private int _capacity { get; set; }
         private Guid _id = Guid.NewGuid();
+        private List<INatural> _animals = new List<INatural>();
 
-        private List<IGrazing> _animals = new List<IGrazing>();
-
-        public double Capacity {
-            get {
+        public double Capacity
+        {
+            get
+            {
                 return _capacity;
             }
         }
-
-        public void AddResource (IGrazing animal)
+        public void AddResource(INatural animal)
         {
             // TODO: implement this...
             throw new NotImplementedException();
         }
 
-        public void AddResource (List<IGrazing> animals)
+        public void AddResource(List<INatural> animals)
         {
             // TODO: implement this...
             throw new NotImplementedException();
@@ -35,7 +35,7 @@ namespace Trestlebridge.Models.Facilities {
             StringBuilder output = new StringBuilder();
             string shortId = $"{this._id.ToString().Substring(this._id.ToString().Length - 6)}";
 
-            output.Append($"Grazing field {shortId} has {this._animals.Count} animals\n");
+            output.Append($"Duck house {shortId} has {this._animals.Count} ducks\n");
             this._animals.ForEach(a => output.Append($"   {a}\n"));
 
             return output.ToString();

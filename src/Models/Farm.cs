@@ -9,16 +9,21 @@ namespace Trestlebridge.Models
     public class Farm
     {
         public List<GrazingField> GrazingFields { get; } = new List<GrazingField>();
+<<<<<<< HEAD
 
         public List<ChickenHouse> ChickenHouses { get; } = new List<ChickenHouse>();
 
+=======
+        public List<PlowedField> PlowedFields { get; } = new List<PlowedField>();
+        public List<NaturalField> NaturalFields { get; } = new List<NaturalField>();
+>>>>>>> master
         public List<DuckHouse> DuckHouses { get; } = new List<DuckHouse>();
 
         /*
             This method must specify the correct product interface of the
             resource being purchased.
          */
-        public void PurchaseResource<T> (IResource resource, int index)
+        public void PurchaseResource<T>(IResource resource, int index)
         {
             Console.WriteLine(typeof(T).ToString());
             switch (typeof(T).ToString())
@@ -31,15 +36,25 @@ namespace Trestlebridge.Models
             }
         }
 
-        public void AddGrazingField (GrazingField field)
+        public void AddGrazingField(GrazingField field)
         {
-            
+
             GrazingFields.Add(field);
-            
+
         }
-        public void AddDuckHouse (DuckHouse field)
+        public void AddNaturalField(NaturalField field)
+        {
+            NaturalFields.Add(field);
+        }
+
+        public void AddPlowedField(PlowedField field)
+        {
+            PlowedFields.Add(field);
+        }
+        public void AddDuckHouse(DuckHouse field)
         {
             DuckHouses.Add(field);
+
         }
 
         public void AddChickenHouse (ChickenHouse house){

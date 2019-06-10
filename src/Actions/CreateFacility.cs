@@ -26,15 +26,28 @@ namespace Trestlebridge.Actions {
                     Thread.Sleep(3000);
                     farm.AddGrazingField(new GrazingField());
                     break;
-                case 4:
+                case 2:
+                    Console.WriteLine("Congrats you've added a natural field");
+                    Thread.Sleep(3000);
+                    farm.AddNaturalField(new NaturalField());
+
+                    break;
+                case 3:
+                    Console.WriteLine("Congrats you've added a plowed field");
+                    Thread.Sleep(3000);
+                    farm.AddPlowedField(new PlowedField());
+
+                    break;
+                   case 4:
                     Console.WriteLine("Congrats you added a chicken house");
                     Thread.Sleep(3000);
-                    farm.AddChickenHouse(new ChickenHouse());
-                    break;
+                    farm.AddChickenHouse(new ChickenHouse());break;
+
                 case 5:
                     Console.WriteLine("Congrats you added a duck house.");
                     Thread.Sleep(3000);
                     farm.AddDuckHouse(new DuckHouse());
+
                     break;
                 default:
                     break;

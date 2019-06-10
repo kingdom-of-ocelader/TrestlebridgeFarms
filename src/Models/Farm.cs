@@ -39,7 +39,7 @@ namespace Trestlebridge.Models
 
         public void AddPlowedField (PlowedField field){
             PlowedFields.Add(field);
-
+        }
         public void AddDuckHouse (DuckHouse field)
         {
             DuckHouses.Add(field);

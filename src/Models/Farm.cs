@@ -9,14 +9,11 @@ namespace Trestlebridge.Models
     public class Farm
     {
         public List<GrazingField> GrazingFields { get; } = new List<GrazingField>();
-<<<<<<< HEAD
 
         public List<ChickenHouse> ChickenHouses { get; } = new List<ChickenHouse>();
 
-=======
         public List<PlowedField> PlowedFields { get; } = new List<PlowedField>();
         public List<NaturalField> NaturalFields { get; } = new List<NaturalField>();
->>>>>>> master
         public List<DuckHouse> DuckHouses { get; } = new List<DuckHouse>();
 
         /*
@@ -67,7 +64,13 @@ namespace Trestlebridge.Models
 
             GrazingFields.ForEach(gf => report.Append(gf));
 
+            NaturalFields.ForEach(nf => report.Append(nf));
+
+            PlowedFields.ForEach(pf => report.Append(pf));
+
             ChickenHouses.ForEach(ch => report.Append(ch));
+
+            DuckHouses.ForEach(dh => report.Append(dh));
 
             return report.ToString();
         }

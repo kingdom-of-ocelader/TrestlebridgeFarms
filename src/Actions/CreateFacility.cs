@@ -18,7 +18,10 @@ namespace Trestlebridge.Actions {
             switch (Int32.Parse(input))
             {
                 case 1:
+                
                     farm.AddGrazingField(new GrazingField());
+
+                    
                     break;
                 default:
                     break;

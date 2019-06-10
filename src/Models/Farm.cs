@@ -9,6 +9,7 @@ namespace Trestlebridge.Models
     public class Farm
     {
         public List<GrazingField> GrazingFields { get; } = new List<GrazingField>();
+        public List<PlowedField> PlowedFields { get; } = new List<PlowedField>();
 
         public List<DuckHouse> DuckHouses { get; } = new List<DuckHouse>();
 
@@ -35,9 +36,14 @@ namespace Trestlebridge.Models
             GrazingFields.Add(field);
             
         }
+
+        public void AddPlowedField (PlowedField field){
+            PlowedFields.Add(field);
+        }
         public void AddDuckHouse (DuckHouse field)
         {
             DuckHouses.Add(field);
+
         }
 
         public override string ToString()

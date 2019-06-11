@@ -27,7 +27,7 @@ namespace Trestlebridge.Actions
 
             Console.Write("> ");
             int choice = Int32.Parse(Console.ReadLine());
-            Console.WriteLine("Congrats on buying a new animal!");
+            Console.WriteLine("You've planted a seed!");
             Thread.Sleep(1000);
 
             farm.PlowedFields[choice - 1].AddResource(plant);

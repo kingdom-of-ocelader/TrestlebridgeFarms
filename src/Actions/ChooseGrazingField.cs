@@ -14,7 +14,15 @@ namespace Trestlebridge.Actions {
        
             for (int i = 0; i < farm.GrazingFields.Count; i++)
             {
-                Console.WriteLine ($"{i + 1}. Number of animals in grazing field {i + 1}: {farm.GrazingFields[i].NumberOfAnimals}");
+                if(farm.GrazingFields[i].NumberOfAnimals < farm.GrazingFields[i].Capacity ){
+                    // if the grazing field is not over capacity, display and chose it
+                    Console.WriteLine ($"{i + 1}. Number of animals in grazing field {i + 1}: {farm.GrazingFields[i].NumberOfAnimals}");
+                }else{
+                    Console.WriteLine("All grazing fields are at capacity, please create a new grazing field.");
+                    Console.WriteLine("Please press enter to return to the main menu.");
+                    Console.ReadLine();
+                    break;
+                }
             }
 
             Console.WriteLine ();

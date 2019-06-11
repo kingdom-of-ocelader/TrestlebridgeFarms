@@ -11,7 +11,7 @@ namespace Trestlebridge.Actions {
 
             for (int i = 0; i < farm.DuckHouses.Count; i++)
             {
-                Console.WriteLine ($"{i + 1}. Duck House");
+                Console.WriteLine ($"{i + 1}. Number of ducks in duck house {i + 1}: {farm.DuckHouses[i].NumberOfAnimals}");
             }
 
             Console.WriteLine ();

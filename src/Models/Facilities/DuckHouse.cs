@@ -9,6 +9,11 @@ namespace Trestlebridge.Models.Facilities {
     {
         private int _capacity = 12;
         private Guid _id = Guid.NewGuid();
+        public int NumberOfAnimals {
+            get{
+                return _animals.Count;
+            }
+        }
 
         private List<IDucks> _animals = new List<IDucks>();
 

@@ -22,7 +22,7 @@ namespace Trestlebridge.Models.Animals {
 
         // Methods
         public void Feed () {
-            Console.WriteLine($"Cow {this._shortId} just ate {this.FeedPerDay}kg of feed.");
+            Console.WriteLine($"Chicken ID:{this._shortId}, just ate {this.FeedPerDay}kg of feed.");
         }
 
         public double Butcher () {
@@ -38,7 +38,7 @@ namespace Trestlebridge.Models.Animals {
         }
 
         public override string ToString () {
-            return $"Chicken {this._shortId}. Bok Bok, Motherfucker!";
+            return $"Chicken ID:{this._shortId}, says Bok Bok, Mofo!";
         }
     }
 }

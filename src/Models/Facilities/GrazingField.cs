@@ -22,7 +22,11 @@ namespace Trestlebridge.Models.Facilities {
                 return _capacity;
             }
         }
-
+        public Guid theId{
+            get{
+                return _id;
+            }
+        }
         public void AddResource (IGrazing animal)
         {
             _animals.Add(animal);

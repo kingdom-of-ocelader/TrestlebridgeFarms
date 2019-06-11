@@ -7,10 +7,9 @@ namespace Trestlebridge.Models.Facilities
 {
     public class NaturalField : IFacility<INatural>
     {
-        private int _capacity { get; set; }
+        private int _capacity = 60;
         private Guid _id = Guid.NewGuid();
-        private List<INatural> _animals = new List<INatural>();
-
+        private List<INatural> _plants = new List<INatural>();
         public double Capacity
         {
             get
@@ -18,25 +17,22 @@ namespace Trestlebridge.Models.Facilities
                 return _capacity;
             }
         }
-        public void AddResource(INatural animal)
+        public void AddResource(INatural plant)
+        {
+            _plants.Add(plant);
+        }
+        public void AddResource(List<INatural> plants)
         {
             // TODO: implement this...
             throw new NotImplementedException();
         }
-
-        public void AddResource(List<INatural> animals)
-        {
-            // TODO: implement this...
-            throw new NotImplementedException();
-        }
-
         public override string ToString()
         {
             StringBuilder output = new StringBuilder();
             string shortId = $"{this._id.ToString().Substring(this._id.ToString().Length - 6)}";
 
-            output.Append($"Duck house {shortId} has {this._animals.Count} ducks\n");
-            this._animals.ForEach(a => output.Append($"   {a}\n"));
+            output.Append($"Natural Field ID:{shortId}, has {this._plants.Count} plant(s)\n");
+            this._plants.ForEach(a => output.Append($"   {a}\n"));
 
             return output.ToString();
         }

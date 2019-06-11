@@ -7,17 +7,17 @@ using Trestlebridge.Models.Plants;
 
 namespace Trestlebridge.Actions
 {
-    public class ChooseNaturalField
+    public class ChooseEitherField
     {
 
-        public static void CollectInput(Farm farm, INatural plant)
+        public static void CollectInput(Farm farm, ISeedAndCompost plant)
         {
             Console.Clear();
 
 
-            for (int i = 0; i < farm.NaturalFields.Count; i++)
+            for (int i = 0; i < farm.NaturalAndPlowed.Count; i++)
             {
-                Console.WriteLine($"{i + 1}. Number of plants in Natural field {i + 1}: {farm.NaturalFields[i].NumberOfPlants}");
+                Console.WriteLine($"{i + 1}. Number of plants in Natural field {i + 1}: {farm.NaturalAndPlowed[i].NumberOfPlants}");
             }
 
             Console.WriteLine();
@@ -30,7 +30,9 @@ namespace Trestlebridge.Actions
             Console.WriteLine("Congrats on buying a new animal!");
             Thread.Sleep(1000);
 
-            farm.NaturalFields[choice - 1].AddResource(plant);
+            int index = choice - 1;
+
+            farm.PurchaseSeed(plant, index);
 
             /*
                 Couldn't get this to work. Can you?

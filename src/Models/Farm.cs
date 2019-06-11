@@ -16,6 +16,8 @@ namespace Trestlebridge.Models
         public List<NaturalField> NaturalFields { get; } = new List<NaturalField>();
         public List<DuckHouse> DuckHouses { get; } = new List<DuckHouse>();
 
+        public List<IFlowering> NaturalAndPlowed = new List<IFlowering>();
+
         /*
             This method must specify the correct product interface of the
             resource being purchased.
@@ -33,6 +35,13 @@ namespace Trestlebridge.Models
                     break;
                 default:
                     break;
+            }
+        }
+
+        public void PlantSeendInChosenField<T>(ISeedAndCompost seed, int index) {
+            Console.WriteLine(typeof(T).ToString());
+            switch (NaturalAndPlowed[index]){
+                
             }
         }
 

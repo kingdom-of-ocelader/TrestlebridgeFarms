@@ -2,9 +2,11 @@ using System;
 using System.Text;
 using System.Collections.Generic;
 using Trestlebridge.Interfaces;
+using Trestlebridge.Models.Plants;
 
 namespace Trestlebridge.Models.Facilities{
-    public class PlowedField: IFacility<IPlowed>{
+    public class PlowedField: IFacility<IPlowed>, IFlowering
+    {
         private int _capacity { get; set; } = 65;
         private Guid _id = Guid.NewGuid();
         private List<IPlowed> _plants = new List<IPlowed>();
@@ -28,6 +30,7 @@ namespace Trestlebridge.Models.Facilities{
             // TODO: implement this...
             throw new NotImplementedException();
         }
+
         public override string ToString()
         {
             StringBuilder output = new StringBuilder();

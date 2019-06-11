@@ -5,7 +5,7 @@ using Trestlebridge.Interfaces;
 
 namespace Trestlebridge.Models.Facilities
 {
-    public class NaturalField : IFacility<INatural>
+    public class NaturalField : IFacility<INatural>, IFlowering
     {
         private int _capacity = 60;
         private Guid _id = Guid.NewGuid();
@@ -32,6 +32,7 @@ namespace Trestlebridge.Models.Facilities
             // TODO: implement this...
             throw new NotImplementedException();
         }
+
         public override string ToString()
         {
             StringBuilder output = new StringBuilder();

@@ -49,7 +49,8 @@ namespace Trestlebridge.Actions
 
                 Console.Write("> ");
                 int choice = Int32.Parse(Console.ReadLine());
-
+                Console.WriteLine("Congrats on buying a new animal!");
+                Thread.Sleep(1000);
                 capacityList[choice - 1].AddResource(animal);
 
                 /*

@@ -5,9 +5,9 @@ using Trestlebridge.Models;
 
 namespace Trestlebridge
 {
-    class Program
+    public class Program
     {
-        static void DisplayBanner ()
+        public static void DisplayBanner ()
         {
             Console.Clear();
             Console.WriteLine();
@@ -20,7 +20,7 @@ namespace Trestlebridge
             Console.WriteLine();
         }
 
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             Console.ForegroundColor = ConsoleColor.White;
 			Console.BackgroundColor = ConsoleColor.DarkMagenta;

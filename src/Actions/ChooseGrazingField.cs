@@ -21,7 +21,7 @@ namespace Trestlebridge.Actions {
                     Console.WriteLine("All grazing fields are at capacity, please create a new grazing field.");
                     Console.WriteLine("Please press enter to return to the main menu.");
                     Console.ReadLine();
-                    break;
+                    return;
                 }
             }
 

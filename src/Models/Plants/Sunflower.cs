@@ -22,5 +22,9 @@ namespace Trestlebridge.Models.Plants
         public override string ToString () {
             return $"Sunflower. So Pretty!";
         }
+
+        public string typeString(){
+            return "Sunflower";
+        }
     }
 }

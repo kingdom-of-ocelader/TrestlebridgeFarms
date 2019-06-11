@@ -38,10 +38,18 @@ namespace Trestlebridge.Models
             }
         }
 
-        public void PlantSeendInChosenField<T>(ISeedAndCompost seed, int index) {
-            Console.WriteLine(typeof(T).ToString());
-            switch (NaturalAndPlowed[index]){
-                
+        public void PlantSeedInChosenField(ISeedAndCompost seed, int index)
+        {
+            switch (NaturalAndPlowed[index].TypeString())
+            {
+                case "Plowed":
+                    PlowedFields.Find(field => field == NaturalAndPlowed[index]).AddResource((IPlowed)seed);
+                    break;
+                case "Natural":
+                    NaturalFields.Find(field => field == NaturalAndPlowed[index]).AddResource((INatural)seed);
+                    break;
+                default:
+                    break;
             }
         }
 
@@ -54,11 +62,13 @@ namespace Trestlebridge.Models
         public void AddNaturalField(NaturalField field)
         {
             NaturalFields.Add(field);
+            NaturalAndPlowed.Add(field);
         }
 
         public void AddPlowedField(PlowedField field)
         {
             PlowedFields.Add(field);
+            NaturalAndPlowed.Add(field);
         }
         public void AddDuckHouse(DuckHouse field)
         {
@@ -66,7 +76,8 @@ namespace Trestlebridge.Models
 
         }
 
-        public void AddChickenHouse (ChickenHouse house){
+        public void AddChickenHouse(ChickenHouse house)
+        {
             ChickenHouses.Add(house);
         }
 

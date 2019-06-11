@@ -43,5 +43,8 @@ namespace Trestlebridge.Models.Facilities
 
             return output.ToString();
         }
+        public string TypeString(){
+            return "Natural";
+        }
     }
 }

@@ -7,11 +7,10 @@ using Trestlebridge.Models.Animals;
 
 namespace Trestlebridge.Actions {
     public class ChooseGrazingField {
-        
+
         public static void CollectInput (Farm farm, IGrazing animal) {
             Console.Clear();
-            
-       
+
             for (int i = 0; i < farm.GrazingFields.Count; i++)
             {
                 Console.WriteLine ($"{i + 1}. Number of animals in grazing field {i + 1}: {farm.GrazingFields[i].NumberOfAnimals}");

@@ -22,8 +22,7 @@ namespace Trestlebridge.Models.Facilities{
         }
         public void AddResource (IPlowed plant)
         {
-            // TODO: implement this...
-            throw new NotImplementedException();
+            _plants.Add(plant);
         }
         public void AddResource (List<IPlowed> plants)
         {
@@ -40,6 +39,10 @@ namespace Trestlebridge.Models.Facilities{
             this._plants.ForEach(a => output.Append($"   {a}\n"));
 
             return output.ToString();
+        }
+
+        public string TypeString(){
+            return "Plowed";
         }
     }
 }

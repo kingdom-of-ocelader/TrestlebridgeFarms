@@ -17,7 +17,8 @@ namespace Trestlebridge.Actions
 
             for (int i = 0; i < farm.NaturalAndPlowed.Count; i++)
             {
-                Console.WriteLine($"{i + 1}. Number of plants in Natural field {i + 1}: {farm.NaturalAndPlowed[i].NumberOfPlants}");
+                string typeString = farm.NaturalAndPlowed[i].TypeString();
+                Console.WriteLine($"{i + 1}. Number of plants in {typeString} field {i + 1}: {farm.NaturalAndPlowed[i].NumberOfPlants}");
             }
 
             Console.WriteLine();
@@ -27,12 +28,14 @@ namespace Trestlebridge.Actions
 
             Console.Write("> ");
             int choice = Int32.Parse(Console.ReadLine());
-            Console.WriteLine("Congrats on buying a new animal!");
-            Thread.Sleep(1000);
 
             int index = choice - 1;
 
-            farm.PurchaseSeed(plant, index);
+            farm.PlantSeedInChosenField(plant, index);
+
+            Console.WriteLine("You planted a seed!");
+            Thread.Sleep(1000);
+
 
             /*
                 Couldn't get this to work. Can you?

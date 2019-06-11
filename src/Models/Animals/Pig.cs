@@ -14,7 +14,7 @@ namespace Trestlebridge.Models.Animals{
             }
         }
         public void Graze(){
-            Console.WriteLine($"Pig {this._shortId} just ate {this.GrassPerDay}kg of grass");
+            Console.WriteLine($"Pig ID:{this._shortId}, just ate {this.GrassPerDay}kg of grass");
         }
 
         public double Butcher () {
@@ -22,7 +22,7 @@ namespace Trestlebridge.Models.Animals{
         }
 
         public override string ToString () {
-            return $"Pig {this._shortId}. OOONK!";
+            return $"Pig ID:{this._shortId}, says OOINK!";
         }
     } 
 }

@@ -20,7 +20,7 @@ namespace Trestlebridge.Models.Animals {
 
         // Methods
         public void Feed () {
-            Console.WriteLine($"Duck {this._shortId} just ate {this.FeedPerDay}kg of grass");
+            Console.WriteLine($"Duck ID:{this._shortId}, just ate {this.FeedPerDay}kg of grass");
         }
 
         public double EggCollect () {
@@ -32,7 +32,7 @@ namespace Trestlebridge.Models.Animals {
         }
 
         public override string ToString () {
-            return $"Duck {this._shortId}. Quack!";
+            return $"Duck ID:{this._shortId}, says Quack!";
         }
     }
 }

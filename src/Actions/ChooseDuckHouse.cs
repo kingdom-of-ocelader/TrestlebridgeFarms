@@ -4,6 +4,8 @@ using System.Threading;
 using Trestlebridge.Interfaces;
 using Trestlebridge.Models;
 using Trestlebridge.Models.Animals;
+using System.Collections.Generic;
+using Trestlebridge.Models.Facilities;
 
 namespace Trestlebridge.Actions
 {
@@ -12,10 +14,25 @@ namespace Trestlebridge.Actions
         public static void CollectInput(Farm farm, IDucks animal)
         {
             Console.Clear();
+            List<DuckHouse> capacityList = farm.DuckHouses.Where(thingy => thingy.NumberOfAnimals < thingy.Capacity).ToList();
 
-            for (int i = 0; i < farm.DuckHouses.Count; i++)
+            if (capacityList.Count == 0)
             {
-                Console.WriteLine($"{i + 1}. Number of ducks in duck house {i + 1}: {farm.DuckHouses[i].NumberOfAnimals}");
+                Console.WriteLine("All Duck Houses are at capacity or you have not created Duck House please create a new Duck Houses.");
+                Console.WriteLine("Please press enter to return to the main menu.");
+                Console.ReadLine();
+                return;
+            }
+            else
+            {
+                for (int i = 0; i < capacityList.Count; i++)
+                {
+                    if (capacityList[i].NumberOfAnimals < capacityList[i].Capacity)
+                    {
+                        // if the grazing field is not over capacity, display and chose it
+                        Console.WriteLine($"Number of ducks in duck house {i + 1}: {capacityList[i].NumberOfAnimals}");
+                    }
+                }
             }
 
             Console.WriteLine();
@@ -27,7 +44,7 @@ namespace Trestlebridge.Actions
             int choice = Int32.Parse(Console.ReadLine());
             Console.WriteLine("Congrats on buying a new animal!");
             Thread.Sleep(1000);
-            farm.DuckHouses[choice - 1].AddResource(animal);
+            capacityList[choice - 1].AddResource(animal);
 
             /*
                 Couldn't get this to work. Can you?

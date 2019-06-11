@@ -3,9 +3,9 @@ using Trestlebridge.Interfaces;
 
 namespace Trestlebridge.Models.Plants
 {
-    public class WildFlower : IResource, INatural;
+    public class WildFlower : IResource, INatural
     {
-        private int _compostProduced = 40;
+        private double _compostProduced = 30.3;
         public string Type { get; } = "WildFlower";
 
         public double Compost () {
@@ -13,7 +13,7 @@ namespace Trestlebridge.Models.Plants
         }
 
         public override string ToString () {
-            return $"Sesame. Yum!";
+            return "Wildfolowers are wild and flowering.";
         }
     }
 }

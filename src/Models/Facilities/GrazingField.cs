@@ -7,11 +7,11 @@ using Trestlebridge.Interfaces;
 namespace Trestlebridge.Models.Facilities {
     public class GrazingField : IFacility<IGrazing>
     {
-        private int _capacity = 20;
+        private int _capacity = 2;
         private Guid _id = Guid.NewGuid();
 
         private List<IGrazing> _animals = new List<IGrazing>();
-        public int NumberOfAnimals {
+        public double NumberOfAnimals {
             get{
                 return _animals.Count;
             }
@@ -22,7 +22,11 @@ namespace Trestlebridge.Models.Facilities {
                 return _capacity;
             }
         }
-
+        public Guid theId{
+            get{
+                return _id;
+            }
+        }
         public void AddResource (IGrazing animal)
         {
             _animals.Add(animal);

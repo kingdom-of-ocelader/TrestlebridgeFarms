@@ -7,7 +7,7 @@ using Trestlebridge.Interfaces;
 namespace Trestlebridge.Models.Facilities {
     public class DuckHouse : IFacility<IDucks>
     {
-        private int _capacity = 50;
+        private int _capacity = 12;
         private Guid _id = Guid.NewGuid();
 
         private List<IDucks> _animals = new List<IDucks>();
@@ -20,11 +20,13 @@ namespace Trestlebridge.Models.Facilities {
 
         public void AddResource (IDucks animal)
         {
-            // TODO: implement this...
-            throw new NotImplementedException();
+            if (_animals.Count < _capacity) {
+            _animals.Add(animal);
+            } else {
+            }
         }
 
-        public void AddResource (List<IDucks> animals) 
+        public void AddResource (List<IDucks> animals)
         {
             // TODO: implement this...
             throw new NotImplementedException();

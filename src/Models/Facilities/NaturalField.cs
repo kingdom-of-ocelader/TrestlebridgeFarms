@@ -10,6 +10,11 @@ namespace Trestlebridge.Models.Facilities
         private int _capacity { get; set; }
         private Guid _id = Guid.NewGuid();
         private List<INatural> _plants = new List<INatural>();
+        public int NumberOfPlants {
+            get{
+                return _plants.Count;
+            }
+        }
 
         public double Capacity
         {

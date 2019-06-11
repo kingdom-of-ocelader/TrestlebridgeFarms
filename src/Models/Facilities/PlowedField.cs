@@ -13,6 +13,11 @@ namespace Trestlebridge.Models.Facilities{
                 return _capacity;
             }
         }
+        public int NumberOfPlants {
+            get{
+                return _plants.Count;
+            }
+        }
         public void AddResource (ISeedProducing plant)
         {
             // TODO: implement this...
@@ -23,7 +28,6 @@ namespace Trestlebridge.Models.Facilities{
             // TODO: implement this...
             throw new NotImplementedException();
         }
-        
 
     }
 }

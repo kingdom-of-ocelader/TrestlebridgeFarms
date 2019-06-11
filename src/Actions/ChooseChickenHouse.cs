@@ -1,5 +1,6 @@
 using System;
 using System.Linq;
+using System.Threading;
 using Trestlebridge.Interfaces;
 using Trestlebridge.Models;
 using Trestlebridge.Models.Animals;
@@ -21,7 +22,8 @@ namespace Trestlebridge.Actions {
 
             Console.Write ("> ");
             int choice = Int32.Parse(Console.ReadLine ());
-
+            Console.WriteLine("Congrats on buying a new animal!");
+            Thread.Sleep(1000);
             farm.ChickenHouses[choice - 1].AddResource(animal);
 
             /*

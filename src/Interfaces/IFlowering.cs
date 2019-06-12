@@ -5,5 +5,7 @@ namespace Trestlebridge.Interfaces
         int NumberOfPlants {get;}
 
         string TypeString();
+
+        double Capacity{get;}
     }
 }

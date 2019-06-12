@@ -1,9 +1,11 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using Trestlebridge.Interfaces;
 using Trestlebridge.Models;
 using Trestlebridge.Models.Plants;
+using Trestlebridge.Models.Facilities;
 
 namespace Trestlebridge.Actions
 {
@@ -15,10 +17,27 @@ namespace Trestlebridge.Actions
             Console.Clear();
 
 
-            for (int i = 0; i < farm.NaturalAndPlowed.Count; i++)
+            Console.Clear();
+            List<IFlowering> capacityList = farm.NaturalAndPlowed.Where(thingy => thingy.NumberOfPlants < thingy.Capacity).ToList();
+
+            if (capacityList.Count == 0)
             {
-                string typeString = farm.NaturalAndPlowed[i].TypeString();
-                Console.WriteLine($"{i + 1}. Number of plants in {typeString} field {i + 1}: {farm.NaturalAndPlowed[i].NumberOfPlants}");
+                Console.WriteLine("All natural fields and plowed are at capacity or you have not created a natural or plowed field. Please create a natural or plowed field.");
+                Console.WriteLine("Please press enter to return to the main menu.");
+                Console.ReadLine();
+                return;
+            }
+            else
+            {
+                for (int i = 0; i < capacityList.Count; i++)
+                {
+                    if (capacityList[i].NumberOfPlants < capacityList[i].Capacity)
+                    {
+                        // if the grazing field is not over capacity, display and chose it
+                        Console.WriteLine($"Number of plants in {capacityList[i].TypeString()} field {i + 1}: {capacityList[i].NumberOfPlants}");
+                    }
+
+                }
             }
 
             Console.WriteLine();

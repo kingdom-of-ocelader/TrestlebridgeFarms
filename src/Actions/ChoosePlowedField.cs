@@ -1,9 +1,11 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using Trestlebridge.Interfaces;
 using Trestlebridge.Models;
 using Trestlebridge.Models.Plants;
+using Trestlebridge.Models.Facilities;
 
 namespace Trestlebridge.Actions
 {
@@ -13,13 +15,27 @@ namespace Trestlebridge.Actions
         public static void CollectInput(Farm farm, IPlowed plant)
         {
             Console.Clear();
+            List<PlowedField> capacityList = farm.PlowedFields.Where(thingy => thingy.NumberOfPlants < thingy.Capacity).ToList();
 
-
-            for (int i = 0; i < farm.PlowedFields.Count; i++)
+            if (capacityList.Count == 0)
             {
-                Console.WriteLine($"{i + 1}. Number of plants in Plowed field {i + 1}: {farm.PlowedFields[i].NumberOfPlants}");
+                Console.WriteLine("All plowed fields are at capacity or you have not created a plowed field. Please create a new natural field.");
+                Console.WriteLine("Please press enter to return to the main menu.");
+                Console.ReadLine();
+                return;
             }
+            else
+            {
+                for (int i = 0; i < capacityList.Count; i++)
+                {
+                    if (capacityList[i].NumberOfPlants < capacityList[i].Capacity)
+                    {
+                        // if the grazing field is not over capacity, display and chose it
+                        Console.WriteLine($"Number of plants in plowed field {i + 1}: {capacityList[i].NumberOfPlants}");
+                    }
 
+                }
+            }
             Console.WriteLine();
 
             // How can I output the type of animal chosen here?

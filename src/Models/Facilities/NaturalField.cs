@@ -7,7 +7,7 @@ namespace Trestlebridge.Models.Facilities
 {
     public class NaturalField : IFacility<INatural>, IFlowering
     {
-        private int _capacity = 60;
+        private int _capacity = 2;
         private Guid _id = Guid.NewGuid();
         private List<INatural> _plants = new List<INatural>();
         public int NumberOfPlants {

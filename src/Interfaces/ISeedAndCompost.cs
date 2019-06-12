@@ -3,6 +3,6 @@ namespace Trestlebridge.Interfaces{
     {
         double Harvest();
 
-        double Compost();
+        double Composter();
     }
 }

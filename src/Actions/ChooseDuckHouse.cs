@@ -30,7 +30,8 @@ namespace Trestlebridge.Actions
                     if (capacityList[i].NumberOfAnimals < capacityList[i].Capacity)
                     {
                         // if the grazing field is not over capacity, display and chose it
-                        Console.WriteLine($"Number of ducks in duck house {i + 1}: {capacityList[i].NumberOfAnimals}");
+                        Console.WriteLine($"Number of ducks in duck house #{i + 1}: {capacityList[i].ducks}");
+                        Console.WriteLine("- - - - - - - - - - - - - - - - ");
                     }
                 }
             }

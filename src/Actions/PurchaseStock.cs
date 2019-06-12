@@ -4,19 +4,27 @@ using Trestlebridge.Models;
 using Trestlebridge.Models.Animals;
 using Trestlebridge.Models.Facilities;
 
-namespace Trestlebridge.Actions {
-    public class PurchaseStock {
-                public static void CollectInput (Farm farm) {
-            Console.WriteLine ("1. Cow");
-            Console.WriteLine ("2. Ostrich");
-            Console.WriteLine ("3. Duck");
+namespace Trestlebridge.Actions
+{
+    public class PurchaseStock
+    {
+        public static void CollectInput(Farm farm)
+        {
+            Console.WriteLine("1. Cow");
+            Console.WriteLine("2. Ostrich");
+            Console.WriteLine("3. Duck");
+            Console.WriteLine("4. Chicken");
+            Console.WriteLine("5. Sheep");
+            Console.WriteLine("6. Goat");
+            Console.WriteLine("7. Pig");
 
 
-            Console.WriteLine ();
-            Console.WriteLine ("What are you buying today?");
 
-            Console.Write ("> ");
-            string choice = Console.ReadLine ();
+            Console.WriteLine();
+            Console.WriteLine("What are you buying today?");
+
+            Console.Write("> ");
+            string choice = Console.ReadLine();
 
             switch (Int32.Parse(choice))
             {
@@ -28,6 +36,18 @@ namespace Trestlebridge.Actions {
                     break;
                 case 3:
                     ChooseDuckHouse.CollectInput(farm, new Duck());
+                    break;
+                case 4:
+                    ChooseChickenHouse.CollectInput(farm, new Chicken());
+                    break;
+                case 5:
+                    ChooseGrazingField.CollectInput(farm, new Sheep());
+                    break;
+                case 6:
+                    ChooseGrazingField.CollectInput(farm, new Goat());
+                    break;
+                case 7:
+                    ChooseGrazingField.CollectInput(farm, new Pig());
                     break;
                 default:
                     break;

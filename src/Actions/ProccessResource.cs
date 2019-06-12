@@ -21,27 +21,27 @@ namespace Trestlebridge.Actions
 
             Console.Write("> ");
             string choice = Console.ReadLine();
-            switch (Int32.Parse(choice))
-            {
-                case 1:
-                    ChooseGrazingField.CollectInput(farm, new Cow());
-                    break;
-                case 2:
-                    ChooseMeatProccesor.CollectInput(farm, IMeatProducing );
-                    break;
-                case 3:
-                    ChooseDuckHouse.CollectInput(farm, new Duck());
-                    break;
-                case 4:
-                    ChooseChickenHouse.CollectInput(farm, new Chicken());
-                    break;
-                case 5:
-                    ChooseGrazingField.CollectInput(farm, new Pig());
-                    break;
+            // switch (Int32.Parse(choice))
+            // {
+            //     case 1:
+            //         ChooseGrazingField.CollectInput(farm, new Cow());
+            //         break;
+            //     case 2:
+            //         ChooseMeatProccesor.CollectInput(farm, IMeatProducing );
+            //         break;
+            //     case 3:
+            //         ChooseDuckHouse.CollectInput(farm, new Duck());
+            //         break;
+            //     case 4:
+            //         ChooseChickenHouse.CollectInput(farm, new Chicken());
+            //         break;
+            //     case 5:
+            //         ChooseGrazingField.CollectInput(farm, new Pig());
+            //         break;
 
-                default:
-                    break;
-            }
+            //     default:
+            //         break;
+            // }
 
         }
     }

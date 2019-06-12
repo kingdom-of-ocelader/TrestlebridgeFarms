@@ -31,7 +31,8 @@ namespace Trestlebridge.Actions
                     {
                         // if the grazing field is not over capacity, display and chose it
                         // Console.WriteLine($"{i + 1}. Number of animals in grazing field {i + 1}: {capacityList[i].NumberOfAnimals}");
-                        Console.WriteLine($"{i + 1}. Number of chickens in chicken house {i + 1}: {capacityList[i].NumberOfAnimals}");
+                        Console.WriteLine($"{i + 1}. Number of chickens in chicken house #{i + 1}: {capacityList[i].chickenCount}");
+                        Console.WriteLine("- - - - - - - - - - - - - - - - ");
                     }
                     else
                     {

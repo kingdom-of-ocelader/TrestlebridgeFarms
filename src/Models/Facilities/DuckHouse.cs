@@ -2,7 +2,7 @@ using System;
 using System.Text;
 using System.Collections.Generic;
 using Trestlebridge.Interfaces;
-
+using Trestlebridge.Models.Animals;
 
 namespace Trestlebridge.Models.Facilities {
     public class DuckHouse : IFacility<IDucks>
@@ -17,6 +17,16 @@ namespace Trestlebridge.Models.Facilities {
 
         private List<IDucks> _animals = new List<IDucks>();
 
+        public int ducks{
+            get{
+            int count = 0;
+            foreach(IDucks an in _animals){
+                if(an is Duck){
+                    count++;
+                }
+            }
+            return count;
+        }}
         public double Capacity {
             get {
                 return _capacity;

@@ -1,6 +1,8 @@
 namespace Trestlebridge.Interfaces{
-    public interface IPlowed
+    public interface ISeedAndCompost
     {
         double Harvest();
+
+        double Composter();
     }
 }

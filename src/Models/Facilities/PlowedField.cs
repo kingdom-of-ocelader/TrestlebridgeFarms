@@ -2,10 +2,12 @@ using System;
 using System.Text;
 using System.Collections.Generic;
 using Trestlebridge.Interfaces;
+using Trestlebridge.Models.Plants;
 
 namespace Trestlebridge.Models.Facilities{
-    public class PlowedField: IFacility<IPlowed>{
-        private int _capacity { get; set; } = 65;
+    public class PlowedField: IFacility<IPlowed>, IFlowering
+    {
+        private int _capacity { get; set; } = 2;
         private Guid _id = Guid.NewGuid();
         private List<IPlowed> _plants = new List<IPlowed>();
         public double Capacity {
@@ -13,16 +15,21 @@ namespace Trestlebridge.Models.Facilities{
                 return _capacity;
             }
         }
+        public int NumberOfPlants {
+            get{
+                return _plants.Count;
+            }
+        }
         public void AddResource (IPlowed plant)
         {
-            // TODO: implement this...
-            throw new NotImplementedException();
+            _plants.Add(plant);
         }
-        public void AddResource (List<IPlowed> plants) 
+        public void AddResource (List<IPlowed> plants)
         {
             // TODO: implement this...
             throw new NotImplementedException();
         }
+
         public override string ToString()
         {
             StringBuilder output = new StringBuilder();
@@ -32,6 +39,10 @@ namespace Trestlebridge.Models.Facilities{
             this._plants.ForEach(a => output.Append($"   {a}\n"));
 
             return output.ToString();
+        }
+
+        public string TypeString(){
+            return "Plowed";
         }
     }
 }

@@ -2,10 +2,11 @@ using System;
 using System.Text;
 using System.Collections.Generic;
 using Trestlebridge.Interfaces;
+using Trestlebridge.Models.Plants;
 
 namespace Trestlebridge.Models.Facilities
 {
-    public class NaturalField : IFacility<INatural>, IFlowering
+    public class NaturalField : IFacility<INatural>, IFacility<IFlowering>
     {
         private int _capacity = 2;
         private Guid _id = Guid.NewGuid();
@@ -23,15 +24,30 @@ namespace Trestlebridge.Models.Facilities
                 return _capacity;
             }
         }
+
         public void AddResource(INatural plant)
         {
             _plants.Add(plant);
         }
+
         public void AddResource(List<INatural> plants)
         {
             // TODO: implement this...
             throw new NotImplementedException();
         }
+
+        public void AddResource(IFlowering plant)
+        {
+            _plants.Add((INatural)plant);
+        }
+
+
+        public void AddResource(List<IFlowering> plants)
+        {
+            // TODO: implement this...
+            throw new NotImplementedException();
+        }
+
 
         public override string ToString()
         {

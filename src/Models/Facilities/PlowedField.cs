@@ -5,7 +5,7 @@ using Trestlebridge.Interfaces;
 using Trestlebridge.Models.Plants;
 
 namespace Trestlebridge.Models.Facilities{
-    public class PlowedField: IFacility<IPlowed>, IFlowering
+    public class PlowedField: IFacility<IPlowed>, IFacility<IFlowering>
     {
         private int _capacity { get; set; } = 2;
         private Guid _id = Guid.NewGuid();
@@ -20,6 +20,7 @@ namespace Trestlebridge.Models.Facilities{
                 return _plants.Count;
             }
         }
+
         public void AddResource (IPlowed plant)
         {
             _plants.Add(plant);
@@ -29,6 +30,19 @@ namespace Trestlebridge.Models.Facilities{
             // TODO: implement this...
             throw new NotImplementedException();
         }
+
+        public void AddResource(IFlowering plant)
+        {
+            _plants.Add((IPlowed)plant);
+        }
+
+
+        public void AddResource(List<IFlowering> plants)
+        {
+            // TODO: implement this...
+            throw new NotImplementedException();
+        }
+
 
         public override string ToString()
         {

@@ -5,11 +5,17 @@ using Trestlebridge.Interfaces;
 
 namespace Trestlebridge.Models.Facilities
 {
-    public class NaturalField : IFacility<INatural>
+    public class NaturalField : IFacility<INatural>, IFlowering
     {
-        private int _capacity = 60;
+        private int _capacity = 2;
         private Guid _id = Guid.NewGuid();
         private List<INatural> _plants = new List<INatural>();
+        public int NumberOfPlants {
+            get{
+                return _plants.Count;
+            }
+        }
+
         public double Capacity
         {
             get
@@ -26,6 +32,7 @@ namespace Trestlebridge.Models.Facilities
             // TODO: implement this...
             throw new NotImplementedException();
         }
+
         public override string ToString()
         {
             StringBuilder output = new StringBuilder();
@@ -35,6 +42,9 @@ namespace Trestlebridge.Models.Facilities
             this._plants.ForEach(a => output.Append($"   {a}\n"));
 
             return output.ToString();
+        }
+        public string TypeString(){
+            return "Natural";
         }
     }
 }

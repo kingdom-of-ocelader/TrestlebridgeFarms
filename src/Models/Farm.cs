@@ -16,6 +16,8 @@ namespace Trestlebridge.Models
         public List<NaturalField> NaturalFields { get; } = new List<NaturalField>();
         public List<DuckHouse> DuckHouses { get; } = new List<DuckHouse>();
 
+        public List<IFlowering> NaturalAndPlowed = new List<IFlowering>();
+
         /*
             This method must specify the correct product interface of the
             resource being purchased.
@@ -36,6 +38,21 @@ namespace Trestlebridge.Models
             }
         }
 
+        public void PlantSeedInChosenField(ISeedAndCompost seed, int index)
+        {
+            switch (NaturalAndPlowed[index].TypeString())
+            {
+                case "Plowed":
+                    PlowedFields.Find(field => field == NaturalAndPlowed[index]).AddResource((IPlowed)seed);
+                    break;
+                case "Natural":
+                    NaturalFields.Find(field => field == NaturalAndPlowed[index]).AddResource((INatural)seed);
+                    break;
+                default:
+                    break;
+            }
+        }
+
         public void AddGrazingField(GrazingField field)
         {
 
@@ -45,11 +62,13 @@ namespace Trestlebridge.Models
         public void AddNaturalField(NaturalField field)
         {
             NaturalFields.Add(field);
+            NaturalAndPlowed.Add(field);
         }
 
         public void AddPlowedField(PlowedField field)
         {
             PlowedFields.Add(field);
+            NaturalAndPlowed.Add(field);
         }
         public void AddDuckHouse(DuckHouse field)
         {
@@ -57,7 +76,8 @@ namespace Trestlebridge.Models
 
         }
 
-        public void AddChickenHouse (ChickenHouse house){
+        public void AddChickenHouse(ChickenHouse house)
+        {
             ChickenHouses.Add(house);
         }
 

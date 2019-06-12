@@ -15,9 +15,9 @@ namespace Trestlebridge.Actions
             Console.Clear();
 
 
-            for (int i = 0; i < farm.NaturalFields.Count; i++)
+            for (int i = 0; i < farm.PlowedFields.Count; i++)
             {
-                Console.WriteLine($"{i + 1}. Number of plants in Natural field {i + 1}: {farm.PlowedFields[i].NumberOfPlants}");
+                Console.WriteLine($"{i + 1}. Number of plants in Plowed field {i + 1}: {farm.PlowedFields[i].NumberOfPlants}");
             }
 
             Console.WriteLine();

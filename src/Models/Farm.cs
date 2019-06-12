@@ -62,13 +62,13 @@ namespace Trestlebridge.Models
         public void AddNaturalField(NaturalField field)
         {
             NaturalFields.Add(field);
-            NaturalAndPlowed.Add(field);
+            NaturalAndPlowed.Add((IFlowering)field);
         }
 
         public void AddPlowedField(PlowedField field)
         {
             PlowedFields.Add(field);
-            NaturalAndPlowed.Add(field);
+            NaturalAndPlowed.Add((IFlowering)field);
         }
         public void AddDuckHouse(DuckHouse field)
         {

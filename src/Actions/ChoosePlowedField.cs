@@ -32,6 +32,8 @@ namespace Trestlebridge.Actions
                     {
                         // if the grazing field is not over capacity, display and chose it
                         Console.WriteLine($"Number of plants in plowed field {i + 1}: {capacityList[i].NumberOfPlants}");
+                        Console.WriteLine($"Sunflowers: {capacityList[i].sunflowers}");
+                        Console.WriteLine($"Sesames: {capacityList[i].sesames}");
                     }
 
                 }

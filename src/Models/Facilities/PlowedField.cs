@@ -5,7 +5,7 @@ using Trestlebridge.Interfaces;
 using Trestlebridge.Models.Plants;
 
 namespace Trestlebridge.Models.Facilities{
-    public class PlowedField: IFacility<IPlowed>, IFacility<IFlowering>
+    public class PlowedField: IFacility<IPlowed>, IFacility<IFlowering>, IFlowering
     {
         private int _capacity { get; set; } = 2;
         private Guid _id = Guid.NewGuid();
@@ -21,6 +21,29 @@ namespace Trestlebridge.Models.Facilities{
             }
         }
 
+        public int sunflowers{
+            get{
+                int count = 0; 
+                foreach(IFlowering plant in _plants){
+                    if(plant is SunFlower){
+                        count ++;
+                    }
+                }
+                return count;
+            }
+        }
+
+        public int sesames{
+            get{
+                int count = 0; 
+                foreach(IFlowering plant in _plants){
+                    if(plant is Sesame){
+                        count ++;
+                    }
+                }
+                return count;
+            }
+        }
         public void AddResource (IPlowed plant)
         {
             _plants.Add(plant);
